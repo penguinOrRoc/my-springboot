@@ -1,0 +1,7 @@
+#所有的配置文件都可以进行配置，若不配置，也会有默认的形式，
+#官方配置说明地址：https://docs.spring.io/spring-boot/docs/2.3.8.RELEASE/reference/html/appendix-application-properties.html#common-application-properties-mail
+server:
+  port: 8080
+
+myjdbc:
+  username : myusername
