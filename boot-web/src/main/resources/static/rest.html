@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Penguin</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <form action="/hello" method = "post">
+        <input value="REST-POST" type="submit">
+    </form>
+    <form action="/hello" method = "get">
+        <input value="REST-GET" type="submit">
+    </form>
+    <form action="/hello" method = "post">
+        <input name="_method" type="hidden" value="put">
+        <input value="REST-PUT" type="submit">
+    </form>
+    <form action="/hello" method = "post">
+        <input name="_method" type="hidden" value="delete">
+        <input value="REST-DELETE" type="submit">
+    </form>
+</body>
+</html>
