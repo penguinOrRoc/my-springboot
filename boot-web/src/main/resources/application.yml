@@ -4,8 +4,7 @@ spring:
       filter:
         enabled: true
 #    static-path-pattern: /mystatic/**
-    #设置静态资源访问前缀 ，该配置会导致welcomepage、favicon.ico失效
 
 server:
   port: 8000
-
+#debug: true

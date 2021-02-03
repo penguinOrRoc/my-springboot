@@ -1,8 +1,6 @@
 package com.penguin.bootweb.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +13,27 @@ public class ParamController {
         Map<String,Object> map = new HashMap<>();
         map.put("param1",param1);
         map.put("param2",param2);
+        return map;
+    }
+    //http://localhost:8000/queryString/strPath?name=%E5%BD%AD%E7%8E%87&sex=%E7%94%B7
+    @GetMapping("/queryString/{path}")
+    public Map<String,Object> getQueryString(@RequestParam("name") String name,@RequestParam("sex") String sex,@PathVariable("path")String path){
+        Map<String,Object> map = new HashMap<>();
+        map.put("pathStr",path);
+        map.put("nameStr",name);
+        map.put("sexStr",sex);
+        return map;
+    }
+    //http://localhost:8000/matrixVariable/matrixPath;name=%E5%BD%AD%E7%8E%87;sex=%E7%94%B7
+    @GetMapping("/matrixVariable/{path}")
+    public Map<String,Object> getMatrixVariable(
+            @MatrixVariable("name") String name,
+            @MatrixVariable("sex") String sex,
+            @PathVariable("path") String path){
+        Map<String,Object> map = new HashMap<>();
+        map.put("pathmatrix",path);
+        map.put("namematrix",name);
+        map.put("sexmatrix",sex);
         return map;
     }
 }
