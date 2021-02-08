@@ -1,16 +1,16 @@
 package com.penguin.bootweb.entity;
 
-public class ConvertorEntity {
+public class DemoEntity {
     private String fname;
     private String lname;
-    private ConvertorRefEntity convertorRefEntity;
+    private DemoRefEntity demoRefEntity;
 
-    public ConvertorRefEntity getConvertorRefEntity() {
-        return convertorRefEntity;
+    public DemoRefEntity getDemoRefEntity() {
+        return demoRefEntity;
     }
 
-    public void setConvertorRefEntity(ConvertorRefEntity convertorRefEntity) {
-        this.convertorRefEntity = convertorRefEntity;
+    public void setDemoRefEntity(DemoRefEntity demoRefEntity) {
+        this.demoRefEntity = demoRefEntity;
     }
 
     public String getFname() {

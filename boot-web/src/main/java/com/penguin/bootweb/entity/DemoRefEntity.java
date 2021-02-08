@@ -1,6 +1,6 @@
 package com.penguin.bootweb.entity;
 
-public class ConvertorRefEntity {
+public class DemoRefEntity {
     private String reffname;
     private String reflname;
 

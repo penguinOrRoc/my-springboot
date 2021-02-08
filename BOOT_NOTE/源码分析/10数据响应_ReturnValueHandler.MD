@@ -8,6 +8,7 @@
    #返回值解析器returnValueHandlers
         json类型数据的视图解析器：RequestResponseBodyMethodProcessor
         页面类型的视图解析器：ModelAndViewMethodReturnValueHandler
+        
 #自动返回JSON数据的原理
     DispatcherServlet.class
 		ModelAndView mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
@@ -20,7 +21,7 @@
         this.returnValueHandlers.handleReturnValue(
         					returnValue, getReturnValueType(returnValue), mavContainer, webRequest);
     >HandlerMethodReturnValueHandlerComposite.class
-   #遍历获取返回值处理器
+   #遍历获取返回值处理器    RequestResponseBodyMethodProcessor 支持对标注@ResponseBody注解的
         HandlerMethodReturnValueHandler handler = selectHandler(returnValue, returnType);
          ------------->
         	private HandlerMethodReturnValueHandler selectHandler(@Nullable Object value, MethodParameter returnType) {
