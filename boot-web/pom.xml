@@ -21,7 +21,13 @@
 	</properties>
 
 	<dependencies>
-	    <!-- xml依赖 -->
+		<!-- thymeleaf依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!-- thymeleaf依赖 -->
+		<!-- xml依赖 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>

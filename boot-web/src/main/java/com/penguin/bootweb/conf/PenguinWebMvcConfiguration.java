@@ -2,6 +2,7 @@ package com.penguin.bootweb.conf;
 
 import com.penguin.bootweb.converter.PenguinMessageConverter;
 import com.penguin.bootweb.entity.DemoRefEntity;
+import com.penguin.bootweb.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -13,6 +14,7 @@ import org.springframework.web.accept.HeaderContentNegotiationStrategy;
 import org.springframework.web.accept.ParameterContentNegotiationStrategy;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.util.UrlPathHelper;
@@ -24,6 +26,14 @@ import java.util.Map;
 
 @Configuration(proxyBeanMethods = false)
 public class PenguinWebMvcConfiguration implements WebMvcConfigurer{
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginInterceptor())
+                .addPathPatterns("/**") //所有请求都被拦截包括静态资源
+                .excludePathPatterns("/","/index.html","/favicon.ico","/thymeleafTest","/fileupload.html"); //放行的请求
+    }
+
     @Bean
     public HiddenHttpMethodFilter hiddenHttpMethodFilter(){
         HiddenHttpMethodFilter methodFilter = new HiddenHttpMethodFilter();

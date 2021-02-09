@@ -13,11 +13,11 @@ public class HtmlController {
 
         ModelAndView modelAndView = null;
         if("forward".equals(htmlPath)){
-            modelAndView = new ModelAndView("forward:/forward.html");
+            modelAndView = new ModelAndView("forward:/htmlResponse/forward.html");
         } else if("redirect".equals(htmlPath)){
-            modelAndView = new ModelAndView("redirect:/redirect.html");
+            modelAndView = new ModelAndView("redirect:/htmlResponse/redirect.html");
         }else{
-            modelAndView = new ModelAndView("redirect:/404.html");
+            modelAndView = new ModelAndView("redirect:/htmlResponse/404.html");
         }
         return modelAndView;
     }
