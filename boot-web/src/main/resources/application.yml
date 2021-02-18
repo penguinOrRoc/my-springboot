@@ -6,7 +6,11 @@ spring:
     contentnegotiation:
       favor-parameter: true #开启请求参数内容协商模式
 #    static-path-pattern: /mystatic/**
-
+  datasource:
+    username: root
+    password: 1qaz@WSX
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.100.100.7:3306/gyrlzyw
 server:
   port: 8000
 #debug: true

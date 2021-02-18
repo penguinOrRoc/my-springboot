@@ -31,7 +31,7 @@ public class PenguinWebMvcConfiguration implements WebMvcConfigurer{
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**") //所有请求都被拦截包括静态资源
-                .excludePathPatterns("/","/index.html","/favicon.ico","/thymeleafTest","/fileupload.html"); //放行的请求
+                .excludePathPatterns("/**"); //放行的请求
     }
 
     @Bean
